@@ -19,10 +19,12 @@ export class CarlistComponent implements OnInit {
   }
   
   addTheCar(make:string, model:string, year:string, imageUrl:string):boolean{
-    let tempCar:ICar;
-    tempCar=new Car(make,model,year,imageUrl);
+    let tempCar: ICar;
+    tempCar = new Car(make,model,year,imageUrl);
     this._carAPIService.addCarData(tempCar);
     return false;
   }
+  
+  show:boolean=true;
 
 }

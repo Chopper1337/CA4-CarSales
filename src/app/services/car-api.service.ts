@@ -29,14 +29,12 @@ export class CarApiService {
   }
   
   addCarData(car:ICar): void {
-    this.carsDataCollection.add(JSON.stringify(car));
+    this.carsDataCollection.add(JSON.parse(JSON.stringify(car)));
+  }
+
+  delCarData(CarID:string): void{
+    this.carsDataCollection.doc(CarID).delete();
   }
   
-  delCarData(car:ICar): void{
-  }
-  
-  private handleError (err:HttpErrorResponse){
-    console.log('CarApiService: ' + err.message);
-    return Observable.throw(err.message);
-  }
+  //private handleError (err:HttpErrorResponse){console.log('CarApiService: ' + err.message);    return Observable.throw(err.message);  }
 }
