@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ca4-carsales-48e44": {
+      "hosting": {
+        "carsales-nosql": [
+          "ca4-carsales-48e44"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ca4-carsales-48e44"
+  }
+}

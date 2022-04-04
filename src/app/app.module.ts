@@ -8,7 +8,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireModule } from "@angular/fire/compat"
-import { environment } from 'src/environments/environment';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { environment } from 'src/environments/environment';
     BrowserModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]
