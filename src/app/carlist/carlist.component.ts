@@ -10,6 +10,7 @@ import { ICar, Car } from '../interfaces/car';
 })
 export class CarlistComponent implements OnInit {
   carsData!:ICar[];
+  show:boolean=false;
 
   constructor(private _carAPIService:CarApiService) { }
 
@@ -24,7 +25,4 @@ export class CarlistComponent implements OnInit {
     this._carAPIService.addCarData(tempCar);
     return false;
   }
-  
-  show:boolean=true;
-
 }
