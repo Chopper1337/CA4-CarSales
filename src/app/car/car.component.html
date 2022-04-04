@@ -12,7 +12,8 @@
         <div class="col-4">
             <img src="{{carData.imageURL" [style.width.px]="carImageWidth" alt="Picture of car"/>
         </div>
+        <div class = "col-2">
+            <button class="btn btn-danger" (click)="deleteCar(carData.id!)">Delete Car</button>
+        </div>
     </div>
-    <div class = "row  btnContain justify-content-center">
-        <button (click)="deleteCar(carData.id!)">Delete Car</button>
 </div>

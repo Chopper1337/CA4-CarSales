@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs';
 import { AngularFirestoreCollection, AngularFirestore } from "@angular/fire/compat/firestore"
 import { ICar } from '../interfaces/car';
-import { Icu } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Injectable({
   providedIn: 'root'
@@ -36,5 +35,7 @@ export class CarApiService {
     this.carsDataCollection.doc(CarID).delete();
   }
   
-  //private handleError (err:HttpErrorResponse){console.log('CarApiService: ' + err.message);    return Observable.throw(err.message);  }
+  private handleError(err:HttpErrorResponse):void {
+    console.log('CarApiService: ' + err.message);
+  }
 }

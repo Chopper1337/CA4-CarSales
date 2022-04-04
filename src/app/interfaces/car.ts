@@ -1,16 +1,17 @@
 export interface ICar {
-    id?: string
-    make: string;
-    model: string;
-    year: string;
-    imageURL: string;
+    id?:string;
+    make:string;
+    model:string;
+    year:string;
+    imageURL:string;
 }
 
 export class Car {
-    make: string;
-    model: string;
-    year: string;
-    imageURL: string;
+    id?:string;
+    make:string;
+    model:string;
+    year:string;
+    imageURL:string;
     
     constructor(make:string,model:string,year:string,imageURL:string){
         this.make = make;
