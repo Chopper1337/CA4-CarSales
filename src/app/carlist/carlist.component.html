@@ -1,23 +1,49 @@
+
 <div class="container">
-<button class="btn btn-primary my-4" (click)="show = !show">{{show ? 'Hide' : 'Add a Car'}}</button>
-
-<div *ngIf="show">
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary my-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add a Car</button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Add a car</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
     <form>
-        <label>Make: </label>
-        <input type="text" name="make" placeholder="Enter Make" #make>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Make: </span>
+            <input type="text" class="form-control" name="make" placeholder="Enter Make" #make aria-label="Make" aria-describedby="basic-addon1">
+          </div>
 
-        <label>Model: </label>
-        <input type="text" name="model" placeholder="Enter Model" #model>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Model: </span>
+            <input type="text" class="form-control" name="make" placeholder="Enter Model" #model aria-label="Model" aria-describedby="basic-addon1">
+          </div>
 
-        <label>Year: </label>
-        <input type="number" name="year" placeholder="Enter Year" #year>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Year: </span>
+            <input type="text" class="form-control" name="year" placeholder="Enter Year" #year aria-label="Year" aria-describedby="basic-addon1">
+          </div>
 
-        <label>Image: </label>
-        <input type="text" name="imageURL" placeholder="Enter link to image" #imageUrl>
-        
-        <button class="btn btn-primary m-2" type="submit" (click)="addTheCar(make.value, model.value,year.value,imageUrl.value)">Add the Car</button>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Image: </span>
+            <input type="text" class="form-control" name="image" placeholder="Enter Image URL" #imageUrl aria-label="Image" aria-describedby="basic-addon1">
+          </div>
     </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button class="btn btn-primary m-2" type="submit" (click)="addTheCar(make.value, model.value,year.value,imageUrl.value)">Add the Car</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
+<div class="container">
 
 <div class="container">
     <app-car *ngFor="let carData of carsData" [carData]="carData"></app-car>
