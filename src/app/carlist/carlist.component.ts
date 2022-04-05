@@ -9,12 +9,12 @@ import { ICar, Car } from '../interfaces/car';
   providers: [CarApiService]
 })
 export class CarlistComponent implements OnInit {
-  carsData!:ICar[];
+  carsData:ICar[];
   show:boolean=false;
 
   constructor(private _carAPIService:CarApiService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this._carAPIService.getCarData().subscribe(carsData =>
       { this.carsData = this.carsData});
   }

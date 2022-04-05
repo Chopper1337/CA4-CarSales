@@ -11,7 +11,7 @@ import { stringify } from 'querystring';
 })
 
 export class CarComponent implements OnInit {
-  @Input() carsData!:ICar;
+  @Input() carData:ICar;
   carImageWidth:number=300;
 
   constructor(private _carAPIService:CarApiService) { }

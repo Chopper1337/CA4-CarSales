@@ -1,19 +1,19 @@
 <div class="container">
     <div class="row border">
         <div class="col-3">
-            {{carsData.make}}
+            {{carData.make}}
         </div>
         <div class="col-3">
-            {{carsData.model}}
+            {{carData.model}}
         </div>
-        <div class="col-3">
-            {{carsData.year}}
+        <div class="col-2">
+            {{carData.year}}
         </div>
         <div class="col-4">
-            <img src="{{carsData.imageURL}}" [style.width.px]="carImageWidth" alt=""/>
+            <img src="{{carData.imageURL}}" [style.width.px]='carImageWidth' alt=""/>
         </div>
         <div class = "col-2">
-            <button class="btn btn-danger" (click)="deleteCar(carsData.id!)">Delete Car</button>
+            <button class="btn btn-danger" (click)="deleteCar(carData.id!)">Delete Car</button>
         </div>
     </div>
 </div>

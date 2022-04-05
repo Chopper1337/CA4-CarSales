@@ -6,15 +6,14 @@ import { AngularFirestoreCollection, AngularFirestore } from "@angular/fire/comp
 import { ICar } from '../interfaces/car';
 import { stringify } from 'querystring';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
+
 export class CarApiService {
   
   carsDataCollection:AngularFirestoreCollection<ICar>;
-  carsData!: Observable<ICar[]>;
-  allCarsData!:ICar[];
-  errorMessage!:string;
+  carsData:Observable<ICar[]>;
+  allCarsData:ICar[];
+  errorMessage:string;
 
   constructor(private _http:HttpClient, private _afs:AngularFirestore) { 
     this.carsDataCollection=_afs.collection<ICar>("cars_data");
@@ -36,7 +35,8 @@ export class CarApiService {
     this.carsDataCollection.doc(CarID).delete();
   }
   
-  private handleError(err:HttpErrorResponse):void {
+  private handleError(err:HttpErrorResponse) {
     console.log('CarApiService: ' + err.message);
+    return new Error(err.message);
   }
 }
