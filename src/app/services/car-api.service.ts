@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs';
 import { AngularFirestoreCollection, AngularFirestore } from "@angular/fire/compat/firestore"
 import { ICar } from '../interfaces/car';
+import { stringify } from 'querystring';
 
 @Injectable({
   providedIn: 'root'

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit} from '@angular/core';
 import { CarApiService } from '../services/car-api.service';
 import { ICar } from '../interfaces/car';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-car',
@@ -10,7 +11,7 @@ import { ICar } from '../interfaces/car';
 })
 
 export class CarComponent implements OnInit {
-  @Input() carData!:ICar;
+  @Input() carsData!:ICar;
   carImageWidth:number=300;
 
   constructor(private _carAPIService:CarApiService) { }
